@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react'; //two functions imported from react, which we installed using npm i
-import { getFlags } from '../services/flags'; //imports data from the countries table
+import { fetchCountries } from '../services/countries'; //imports data from the countries table
 
 export default function Main() {
   const [flags, setFlags] = useState([]);
 
   useEffect(() => {
     const fetchFlags = async () => {
-      const resp = await getFlags();
-      console.log(resp);
-      setFlags(resp);
+      try {
+        const resp = await fetchCountries();
+        console.log(resp);
+        setFlags(resp);
+      } catch (e) {
+        alert('something is wrong', e.message);
+      }
     };
     console.log('use effect ran');
     console.log({ flags });

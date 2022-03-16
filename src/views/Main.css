@@ -1,0 +1,28 @@
+.country {
+  border: 2px black solid;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 30px;
+}

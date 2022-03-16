@@ -34,9 +34,7 @@ export default function Main() {
   }, []);
 
   const filterFlags = () => {
-    return flags.filter((flag) => {
-      return flag.continent === continents;
-    });
+    return flags.filter((flag) => flag.continent === continents || continents === 'All');
   };
 
   return (

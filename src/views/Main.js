@@ -21,15 +21,12 @@ export default function Main() {
     const fetchFlags = async () => {
       try {
         const resp = await fetchCountries();
-        console.log(resp);
         setFlags(resp);
         setLoading(false);
       } catch (e) {
         alert('something is wrong', e.message);
       }
     };
-    console.log('use effect ran');
-    console.log({ flags });
     fetchFlags();
   }, []);
 

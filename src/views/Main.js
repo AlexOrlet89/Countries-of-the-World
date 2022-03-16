@@ -42,6 +42,7 @@ export default function Main() {
   return (
     <>
       <header>
+        <h2>COUNTRIES OF THE WORLD</h2>
         <select onChange={(e) => setContinent(e.target.value)}>
           {continentoptions.map((cont) => (
             <option key={cont} value={cont}>
@@ -54,12 +55,7 @@ export default function Main() {
         {filterFlags().map((flag) => (
           <div key={flag.iso2} className="country">
             {flag.name}
-            <img
-              src={`https://flagcdn.com/72x54/${flag.iso2.toLowerCase()}.png`}
-              width="100"
-              height="100"
-              alt={flag.name}
-            />
+            <img src={`https://flagcdn.com/72x54/${flag.iso2.toLowerCase()}.png`} alt={flag.name} />
           </div>
         ))}
       </main>

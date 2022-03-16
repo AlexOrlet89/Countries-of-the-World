@@ -33,6 +33,12 @@ export default function Main() {
     fetchFlags();
   }, []);
 
+  const filterFlags = () => {
+    return flags.filter((flag) => {
+      return flag.continent === continents;
+    });
+  };
+
   return (
     <>
       <header>
@@ -45,7 +51,7 @@ export default function Main() {
         </select>
       </header>
       <main>
-        {flags.map((flag) => (
+        {filterFlags().map((flag) => (
           <div key={flag.iso2} className="country">
             {flag.name}
             <img

@@ -36,7 +36,7 @@ export default function Main() {
   return (
     <>
       <header>
-        <select>
+        <select onChange={(e) => setContinent(e.target.value)}>
           {continentoptions.map((cont) => (
             <option key={cont} value={cont}>
               {cont}

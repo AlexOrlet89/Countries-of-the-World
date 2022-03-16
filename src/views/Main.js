@@ -4,6 +4,19 @@ import { fetchCountries } from '../services/countries'; //imports data from the 
 
 export default function Main() {
   const [flags, setFlags] = useState([]);
+  const [continents, setContinent] = useState('All');
+  const continentoptions = [
+    'All',
+    'Null',
+    'Africa',
+    'North America',
+    'South America',
+    'Australia',
+    'Asia',
+    'Oceania',
+    'Europe',
+    'Antarctica',
+  ];
 
   useEffect(() => {
     const fetchFlags = async () => {
@@ -22,7 +35,15 @@ export default function Main() {
 
   return (
     <>
-      <header></header>
+      <header>
+        <select>
+          {continentoptions.map((cont) => (
+            <option key={cont} value={cont}>
+              {cont}
+            </option>
+          ))}
+        </select>
+      </header>
       <main>
         {flags.map((flag) => (
           <div key={flag.iso2} className="country">

@@ -7,16 +7,15 @@ export default function Main() {
   const [continents, setContinent] = useState('All');
   const continentoptions = [
     'All',
-    'Null',
     'Africa',
     'North America',
     'South America',
-    'Australia',
     'Asia',
     'Oceania',
     'Europe',
     'Antarctica',
   ];
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchFlags = async () => {
@@ -24,6 +23,7 @@ export default function Main() {
         const resp = await fetchCountries();
         console.log(resp);
         setFlags(resp);
+        setLoading(false);
       } catch (e) {
         alert('something is wrong', e.message);
       }
@@ -36,6 +36,8 @@ export default function Main() {
   const filterFlags = () => {
     return flags.filter((flag) => flag.continent === continents || continents === 'All');
   };
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <>

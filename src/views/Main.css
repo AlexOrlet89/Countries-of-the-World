@@ -1,0 +1,10 @@
+.country {
+  border: 2px black solid;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}

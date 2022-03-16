@@ -1,3 +1,4 @@
+import './Main.css';
 import { useEffect, useState } from 'react'; //two functions imported from react, which we installed using npm i
 import { fetchCountries } from '../services/countries'; //imports data from the countries table
 
@@ -20,10 +21,21 @@ export default function Main() {
   }, []);
 
   return (
-    <main>
-      {flags.map((flag) => (
-        <p key={flag.iso2}>{flag.name}</p>
-      ))}
-    </main>
+    <>
+      <header></header>
+      <main>
+        {flags.map((flag) => (
+          <div key={flag.iso2} className="country">
+            {flag.name}
+            <img
+              src={`https://flagcdn.com/72x54/${flag.iso2.toLowerCase()}.png`}
+              width="100"
+              height="100"
+              alt={flag.name}
+            />
+          </div>
+        ))}
+      </main>
+    </>
   );
 }
